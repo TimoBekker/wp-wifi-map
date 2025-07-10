@@ -1,54 +1,100 @@
+/* Основные стили для карты */
+#map {
+  width: 100%;
+  height: 80vh; /* Высота — 80% видового окна для лучшей адаптивности */
+}
+
+/* Стиль для баллонов с учетом мобильных устройств */
+.custom-balloon {
+  font-family: 'Arial', sans-serif;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  max-width: 250px;
+  /* Добавим плавность расширения для мобильных */
+  box-sizing: border-box;
+}
+
+/* Заголовки внутри баллонов */
+.custom-balloon h2 {
+  margin-top: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #222;
+}
+
+/* Описание внутри баллонов */
+.custom-balloon p {
+  margin: 8px 0;
+  font-size: 12px;
+  color: #555;
+}
+
+/* Список внутри баллонов */
+.custom-balloon ul {
+  padding-left: 20px;
+  margin: 8px 0;
+}
+
+.custom-balloon li {
+  margin-bottom: 8px;
+}
+
+/* Кнопка копирования */
+.copy-button {
+  display: block;
+  width: 100%;
+  background-color: #1e97fe;
+  border: none;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Arial', sans-serif;
+  font-size: 12px;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+/* Кнопка при наведении или фокусе */
+.copy-button:hover,
+.copy-button:focus {
+  background-color: #0056b3;
+}
+
+/* Медиазапрос для устройств с шириной до 768px (мобильных) */
+@media (max-width: 768px) {
+  /* Высота карты — чуть меньше, чтобы было удобно скроллить */
   #map {
-    width: 100%;
-    height: 800px;
+    height: 60vh;
   }
-  
+
+  /* Баллоны становятся шире, чтобы лучше помещались на экране */
   .custom-balloon {
-    font-family: 'Arial', sans-serif;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    padding: 15px;
-    max-width: 250px;
+    max-width: 90%;
+    padding: 12px;
+    font-size: 14px;
   }
 
+  /* Заголовки внутри баллонов */
   .custom-balloon h2 {
-    margin-top: 0;
-    font-size: 16px;
-    font-weight: bold;
-    color: #222;
+    font-size: 18px;
   }
 
+  /* Описание внутри баллонов */
   .custom-balloon p {
-    margin: 8px 0;
-    font-size: 12px;
-    color: #555;
+    font-size: 14px;
   }
 
+  /* Список внутри баллонов */
   .custom-balloon ul {
     padding-left: 20px;
-    margin: 8px 0;
   }
 
-  .custom-balloon li {
-    margin-bottom: 8px;
-  }
-
+  /* Размер кнопки копирования — увеличим для удобства */
   .copy-button {
-    display: block;
-    width: 100%;
-    background-color: #007bff;
-    border: none;
-    color: #fff;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: 'Arial', sans-serif;
-    font-size: 12px;
-    margin-top: 10px;
-    transition: background-color 0.3s;
+    font-size: 14px;
+    padding: 10px 14px;
   }
-
-  .copy-button:hover {
-    background-color: #0056b3;
-  }
+}

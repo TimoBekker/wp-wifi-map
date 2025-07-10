@@ -73,17 +73,17 @@ function init() {
           balloonContent: balloonContent
         }, {
           iconLayout: 'default#image',
-          iconImageHref: 'wifi_icon.png',
-          iconImageSize: [30, 30],
-          iconImageOffset: [-15, -15]
+          iconImageHref: 'wifi_icon.svg',
+          iconImageSize: [40, 40],
+          iconImageOffset: [-20, -20]
         });
 
         const radiusCircle = new ymaps.Circle([
           [latitude, longitude],
           50
         ], {}, {
-          fillColor: 'rgba(0, 123, 255, 0.2)',
-          strokeColor: '#007bff',
+          fillColor: 'rgba(30, 151, 254, 0.2)',
+          strokeColor: '#1e97fe',
           strokeOpacity: 0.6,
           strokeWidth: 2,
           cursor: 'default',
