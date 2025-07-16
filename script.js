@@ -4,7 +4,7 @@ function init() {
   const map = new ymaps.Map("map", {
     center: [53.1955, 50.1187],
     zoom: 9,
-    controls: ['zoomControl', 'fullscreenControl', 'typeSelector']
+    controls: ['zoomControl', 'typeSelector']
   });
 
   let clusterer = new ymaps.Clusterer({
@@ -200,29 +200,29 @@ function init() {
   });
 
   // Функции копирования
-  function copyToClipboard(text) {
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(text).then(() => {
-        alert('Координаты скопированы: ' + text);
-      }).catch(() => {
-        fallbackCopy(text);
-      });
-    } else {
+function copyToClipboard(text) {
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(() => {
+      // ничего не делаем
+    }).catch(() => {
       fallbackCopy(text);
-    }
+    });
+  } else {
+    fallbackCopy(text);
   }
+}
 
-  function fallbackCopy(text) {
-    const textarea = document.createElement('textarea');
-    textarea.value = text;
-    document.body.appendChild(textarea);
-    textarea.select();
-    try {
-      document.execCommand('copy');
-      alert('Координаты скопированы: ' + text);
-    } catch (err) {
-      alert('Ошибка копирования');
-    }
-    document.body.removeChild(textarea);
+function fallbackCopy(text) {
+  const textarea = document.createElement('textarea');
+  textarea.value = text;
+  document.body.appendChild(textarea);
+  textarea.select();
+  try {
+    document.execCommand('copy');
+    //alert('Координаты скопированы');
+  } catch (err) {
+    alert('Ошибка копирования');
   }
+  document.body.removeChild(textarea);
+}
 }
