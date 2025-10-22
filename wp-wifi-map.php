@@ -4,6 +4,7 @@ Plugin Name: WiFi Map
 Description: Публичные точки доступа WiFi СО
 Version: 1.2.0
 Author: Timo Bekker
+Plugin URI: https://github.com/TimoBekker/wp-wifi-map
 */
 
 if (!defined('ABSPATH')) exit;
